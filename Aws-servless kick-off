@@ -1,0 +1,139 @@
+----------------------------------------
+SERVLESS 
+----------------------------------------
+
+Serverless:
+Allow us to easily Create, deploy, manage and debug lamda functions
+and also integrate with CI/CD and has cloudformation support so you
+
+- NO NEED TO MANAGE YOUR INFRASTRUCTRE, JUST YOUR FUNCTION
+
+ can automate your entire stack when deploying
+
+https://www.serverless.com/framework/docs/getting-started/
+
+
+
+
+----------------------------------------
+SET FAVOURITE FOR A QUICK SERVCE ACCESS
+----------------------------------------
+
+- EC2
+- Lambdas
+- CloudWatch
+- StepFunctions
+- API Gateway
+- DynamoDB
+
+
+
+
+----------------------------------------
+CHOOSE AWS ZONE
+----------------------------------------
+
+Console:
+	- Make sure you sellect the right zone.
+	- advice
+		- if you have your production code in Zone A, create a testing environment in zone B
+
+
+
+
+----------------------------------------
+INSTALL DEPENDENCIES
+----------------------------------------
+
+Make sure the following dependecies are installed
+- Node
+- AWS CLI
+- Serverless
+
+
+create aws user, setup credentials and setup serveless
+
+- npm install -g serverless
+- we need to create user-role for our servless management
+
+
+
+
+----------------------------------------
+SET UP DEFAULT CREDENTIALS
+----------------------------------------
+
+Global:
+- modify or create the credentials file
+  - .aws/credentials   
+
+
+
+
+
+----------------------------------------
+SET UP CLOUD FORMATION
+----------------------------------------
+Project:
+IN THE SERVELESS.YML UNDER PROVIDER ADD:
+- profile: your-aws-user
+- region: your-region
+
+
+
+
+
+----------------------------------------
+CONFIG SERVERLESS
+----------------------------------------
+
+serverless config credentials --provider aws ---key YOUR-ACCESS-KEY --secret YOUR-ACCESS-SECRETE --profile YOUR-USER
+
+
+
+
+----------------------------------------
+CREATE A FUNCTION FROM TEMPLATE
+----------------------------------------
+
+sls create --template aws-nodejs --path hello-word-node
+
+
+
+
+
+----------------------------------------
+DEPLOY THE INTIRE STACK
+----------------------------------------
+
+sls deploy -v
+
+
+
+
+
+----------------------------------------
+RE-DEPLOY ONLY THE FUNCTION AND ITS DEPENDENCIES
+----------------------------------------
+
+sls deploy functiion -f hello
+
+
+
+
+----------------------------------------
+****************************************
+----------------------------------------
+			LOCAL DEVELOPMENT
+----------------------------------------
+****************************************
+----------------------------------------
+
+
+
+----------------------------------------
+INVOKE FUNCTION FROM COMMANDLINE
+----------------------------------------
+
+In the root folder:
+- sls invoke -f hello -l
